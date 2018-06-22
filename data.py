@@ -23,10 +23,15 @@ create_product(apple, "iPhone 5s", "128GB Silver", 250)
 #############################################################################
 # To create a new store:
     # Create a new Store() object, and append it to the stores list.
+samsung= Store("Samsung")
+stores.append(samsung)
 
 # To add a new product to the store:
     # use the create_product() function
     # which takes the store you want to add the product to, and the product details
+create_product(samsung, "Samsung Galaxy S9", "64 GB model", 350)
+create_product(samsung, "Samsung Galaxy S9 cover", "black matte water resistant cover", 15)
+create_product(samsung, "Samsung Galaxy S9  charger", "complimentary charger", 0)
 
 pharmacy = Store("Pharmacy")
 stores.append(pharmacy)
