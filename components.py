@@ -32,7 +32,7 @@ class Product():
         self.price= price 
 
     def __str__(self):
-        print(" %s,%s,%s")%(self.name,self.description,self.price)
+        print("Product Name: %s\n\tDescription: %s\n\tPrice: %s KD")%(self.name,self.description,self.price)
         
 
 class Cart():
