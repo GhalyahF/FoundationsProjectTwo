@@ -5,13 +5,13 @@ class Store():
         Initializes a new store with a name.
         """
         self.name= name
+        self.products= []
 
     def add_product(self, product):
 
         """
         Adds a product to the list of products in this store.
         """
-        self.products= []
         self.products.append(product)
 
 
@@ -19,7 +19,9 @@ class Store():
         """
         Prints all the products of this store in a nice readable format.
         """
-        [print("-",self.product) for products in self]
+        print("%s:" % self.name)
+        [print("-",self.product) for products in self.products]
+        print()
 
 
 class Product():
@@ -45,25 +47,36 @@ class Cart():
         """
         Adds a product to this cart.
         """
-        self.append(product)
+        self.products.append(product)
 
     def get_total_price(self):
         """
         Returns the total price of all the products in this cart.
         """
-        total=0
+        price=0
         for product in self.products:
-            price= product[1]
-            total += price 
+            price += product.price
+            
+        return price 
     def print_receipt(self):
         """
         Prints the receipt in a nice readable format.
         """
-        print("Total: $%.2f")%self.price
+        print ("Here's your receipt: ")
+        for product in self.products:
+            print(product)
+            print()
+        print("Your total price is: KD%s" %self.get_total_price())
 
     def checkout(self,paid):
         """
         Does the checkout.
         """
-        print ("Checking out. You have a total of %.02f worth of items in your cart" % (Cart.price))
-        return print_receipt()
+        print ("---------------------")
+        self.print_receipt()
+        confirm= input("Confirm? (yes/no)")
+        if confirm.lower()== "yes" or confirm.lower()== "y":
+            self.products= []
+            print("Your order has been placed.")
+        else:
+            print("Your order has been cancelled.")
