@@ -34,7 +34,7 @@ class Product():
         self.price= price 
 
     def __str__(self):
-        print("Product Name: %s\n\tDescription: %s\n\tPrice: %s KD")%(self.name,self.description,self.price)
+        return "Product Name: %s\n\tDescription: %s\n\tPrice: %sKD"%(self.name,self.description,self.price)
         
 
 class Cart():
@@ -68,7 +68,7 @@ class Cart():
             print()
         print("Your total price is: KD%s" %self.get_total_price())
 
-    def checkout(self,paid):
+    def checkout(self):
         """
         Does the checkout.
         """
